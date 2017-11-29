@@ -1,10 +1,11 @@
 package com.base.di.module;
 
+import com.ferhatergun.javamvp.api.Endpoints;
+
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import com.base.Endpoints;
 import retrofit2.Retrofit;
 
 /**

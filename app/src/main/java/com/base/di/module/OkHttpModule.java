@@ -51,7 +51,7 @@ public class OkHttpModule {
 
             Response response = chain.proceed(request);
             String headerValue;
-            if (ConnectionUtil.getInstance().isNetworkConnected())
+            if (ConnectionUtil.isNetworkConnected())
                 headerValue = "public, max-age=60";
             else
                 headerValue = "public, only-if-cached, max-stale=604800";

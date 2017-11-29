@@ -34,7 +34,7 @@ public class HomeActivity extends BaseActivity implements HomeView {
         setContentView(R.layout.activity_main);
 
         // Calling the method
-        homePresenter.showToastWithObject();
+        homePresenter.rxJavaSampleMethod();
     }
 
     @Override

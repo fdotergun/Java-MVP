@@ -1,26 +1,17 @@
 package com.base.service;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import com.base.App;
+
 /**
  * Created by ferhat on 11/21/2017.
  */
 
 public class ConnectionUtil {
-
-    private static final ConnectionUtil ourInstance = new ConnectionUtil();
-
-    public static ConnectionUtil getInstance() {
-        return ourInstance;
-    }
-
-    private ConnectionUtil() {
-    }
-
-    public boolean isNetworkConnected(){
-        //ConnectivityManager connectivityManager =(ConnectivityManager) App.application().getSystemService(Context.CONNECTIVITY_SERVICE);
-        /*if (connectivityManager.getActiveNetworkInfo() != null){
+    public static boolean isNetworkConnected() {
+        if (((ConnectivityManager) App.appComponent.application().getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo() != null) {
             return true;
-        }else return false;
-    }*/
-        return false;
+        } else return false;
     }
 }

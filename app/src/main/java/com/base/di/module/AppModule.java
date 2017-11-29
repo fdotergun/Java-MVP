@@ -10,6 +10,10 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import io.reactivex.Scheduler;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.CompositeDisposable;
+
 import com.base.helper.SharedPrefHelper;
 
 /**
@@ -40,5 +44,11 @@ public class AppModule {
     @Singleton
     public SharedPrefHelper providesSharedPrefHelper(Gson gson){
         return new SharedPrefHelper(application.getSharedPreferences("sharedPreferences", Context.MODE_PRIVATE),gson);
+    }
+
+    @Provides
+    @Singleton
+    public CompositeDisposable providesCompositeDisposable(){
+        return new CompositeDisposable();
     }
 }

@@ -3,11 +3,12 @@ package com.ferhatergun.javamvp.home.di;
 import android.app.Activity;
 import android.content.Context;
 
+import com.ferhatergun.javamvp.api.Endpoints;
 import com.google.gson.Gson;
 
 import dagger.Module;
 import dagger.Provides;
-import com.base.Endpoints;
+
 import com.base.di.ActivityScope;
 import com.base.helper.SharedPrefHelper;
 import com.ferhatergun.javamvp.home.mvp.HomePresenter;
@@ -34,7 +35,7 @@ public class HomeActivityModule {
 
     @Provides
     @ActivityScope
-    public HomePresenter providesHomePresenter(Endpoints api,SharedPrefHelper sharedPrefHelper,Gson gson){
+    public HomePresenter providesHomePresenter(Endpoints api, SharedPrefHelper sharedPrefHelper, Gson gson){
         return new HomePresenter(api,sharedPrefHelper,gson);
     }
 }
